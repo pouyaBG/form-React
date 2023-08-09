@@ -1,7 +1,7 @@
-const validata = data => {
+export const validata = data => {
   const errors = {};
 
-  if (!data.name.trim()) {
+  if (!data.name) {
     errors.name = "user name required";
   } else {
     delete errors.name

@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
+import { validata } from "../validate/Validate";
 
 const Signup = () => {
+  const [errors, setErrors] = useState({})
   const [data, setData] = useState({
     name: "",
     email: "",
@@ -9,6 +11,10 @@ const Signup = () => {
     confirmPassword: "",
     isAccepted: false,
   });
+
+  useEffect(() => {
+    setErrors(validata)
+  }, [data])
 
   const changHandler = (event) => {
     if (event.target.name === "isAccepted") {
